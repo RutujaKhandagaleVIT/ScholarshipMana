@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+	th:replace="ddo/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+				<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+					<p th:text="${session.message.content}"></p>
+					<th:block th:text="${#session.removeAttribute(message)}"> </th:block>
+				</div>
+					<div class="my-card">
+						<h1 class="text-center">Update Here</h1>
+						<form action="" th:action="@{/user/update_ddo}" method="post" th:object="${user}">
+							
+							<!--First name field -->
+							<div class="mb-3">
+						    	<label for="firstName" class="form-label">First Name</label>
+						    	<input type="text" class="form-control" required id="firstName" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.firstName}" name="firstName">
+						    </div>
+						    <!--Middle name field -->
+							<div class="mb-3">
+						    	<label for="middleName" class="form-label">Middle Name</label>
+						    	<input type="text" class="form-control" required id="middleName" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.middleName}" name="middleName">
+						    </div>
+						    <!-- Last name field -->
+							<div class="mb-3">
+						    	<label for="lastName" class="form-label">Last Name</label>
+						    	<input type="text" class="form-control" required id="lastName" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.lastName}" name="lastName">
+						    </div>
+						    
+						    <!-- Email field -->
+							<div class="mb-3">
+						    	<label for="mail" class="form-label">Email</label>
+						    	<input type="email" class="form-control" required id="mail" aria-describedby="emailHelp" placeholder="Enter here"  th:value="${user.email}" name="email">
+						    </div>
+						    
+						    <!-- Email field -->
+							<div class="mb-3">
+						    	<label for="pass" class="form-label">Password</label>
+						    	<input type="password" class="form-control" required id="pass" aria-describedby="emailHelp" placeholder="Enter here" name="password">
+						    </div>
+						    
+								    <br>
+
+						    
+						    <div class="mb-3">
+						   		 <button class="form-control btn btn-primary" type="submit">Submit</button>
+						    </div>
+						    
+						    <div class="mb-3">
+						   		 <button class="form-control btn btn-gray" type="reset">Reset</button>
+						    </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

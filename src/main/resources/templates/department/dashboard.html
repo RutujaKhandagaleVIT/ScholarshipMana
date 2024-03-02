@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="department/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+				
+					<div class="my-card">
+						<h1 class="text-center">Applications</h1>
+
+						<table class="table caption-top">
+						  <thead>
+						    <tr>
+						      <th scope="col">Application ID</th>
+						      <th scope="col">Scheme</th>
+						      <th scope="col">Institute</th>
+						      <th scope="col">Department</th>
+						      <th scope="col">DDO</th>
+						      <th scope="col">Action</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr th:each="p : ${list}">
+						      <th scope="row" th:text="APPID+${p.id}">1</th>
+						      <td th:text="${p.scheme}">Mark</td>
+						      <td th:text="${p.institute}">Mark</td>
+						      <td th:text="${p.department}">Mark</td>
+						      <td th:text="${p.ddo}">Mark</td>
+						      <td>
+						      	<a class="btn btn-primary" th:href="@{'/user/'+${p.id}+'/application_action_department'}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+						      </td>
+						    </tr>
+						   
+						  </tbody>
+						</table>
+						 <nav aria-label="Page navigation example">
+						  <ul class="pagination justify-content-center">
+						    <li class="page-item" th:classappend="${current > 0 ? '' : 'disabled'}">
+						      <a class="page-link" href="#" tabindex="-1" aria-disabled="true" th:href="@{'/user/department/'+${current-1}}">Previous</a>
+						    </li>
+						    <li class="page-item" th:classappend="${current == i-1 ? 'active' : ''} " th:each="i : ${#numbers.sequence(1, total)}"><a class="page-link" th:href="@{'/user/department/'+${i-1}}" href="#"><span th:text="${i}"></span></a></li>
+
+						    <li class="page-item" th:classappend="${current < total-1 ? '' : 'disabled'}">
+						      <a class="page-link" href="#" th:href="@{'/user/department/'+${current+1}}">Next</a>
+						    </li>
+						  </ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="student/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+				<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+					<p th:text="${session.message.content}"></p>
+					<th:block th:text="${#session.removeAttribute(message)}"> </th:block>
+				</div>
+					<div class="my-card">
+						<h1 class="text-center">Fill Application</h1>
+						<form action="#" th:action="@{/user/application_submit}" method="post" th:object="${apk}">
+						    
+						     <!-- College -->
+						    <label for="scheme" class="form-label">Select Scheme</label>
+						    <select class="form-select" aria-label="Default select example" required id="scheme" name="scheme">
+								<option value="sports">SPORTS</option>
+								<option value="tuition">TUITION</option>
+								<option value="hostel">HOSTEL</option>
+								<option value="disabile">DISABILE</option>
+							</select>
+						    
+						    <!--First name field -->
+							<div class="mb-3">
+						    	<label for="firstName" class="form-label">First Name</label>
+						    	<input type="text" class="form-control" required id="firstName" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.firstName}" name="firstName">
+						    </div>
+						    <!--Middle name field -->
+							<div class="mb-3">
+						    	<label for="middleName" class="form-label">Middle Name</label>
+						    	<input type="text" class="form-control" required id="middleName" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.middleName}" name="middleName">
+						    </div>
+						    <!-- Last name field -->
+							<div class="mb-3">
+						    	<label for="lastName" class="form-label">Last Name</label>
+						    	<input type="text" class="form-control" required id="lastName" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.lastName}" name="lastName">
+						    </div>
+						    
+						     <!-- Last name field -->
+							<div class="mb-3">
+						    	<label for="email" class="form-label">Email</label>
+						    	<input type="email" class="form-control" required id="email" aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.email}" name="email">
+						    </div>
+						    
+						    <!-- Contact -->
+							<div class="mb-3">
+						    	<label for="contact" class="form-label">Contact</label>
+						    	<input type="number" class="form-control" pattern="^[0-9]{10}$" required id="contact"  placeholder="Enter here" name="contact">
+						    </div>
+						    
+						    <!-- Gender -->
+						    <label for="gender" class="form-label">Gender</label>
+						    <select class="form-select" aria-label="Default select example" required id="gender" name="gender">
+				
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+							</select>
+							
+							
+							<!-- Date of Birth -->
+							<div class="mb-3">
+						    	<label for="dob" class="form-label">Date of Birth</label>
+						    	<input type="text" class="form-control" required id="dob" aria-describedby="emailHelp" placeholder="DD/MM/YYYY" name="dob">
+						    </div>
+						    
+							<!-- disability -->
+							<div class="mb-3">
+						    	<label for="disability" class="form-label">Disability</label>
+						    	<input type="text" class="form-control"  id="disability" aria-describedby="emailHelp" placeholder="Enter here" name="disability">
+						    </div>
+							
+							<!-- Address -->
+							<div class="mb-3">
+						    	<label for="address" class="form-label">Address</label>
+						    	<textarea class="form-control" id="address" rows="3" name="address"></textarea>
+						    </div>
+						    
+						    <!-- Category -->
+						    <label for="category" class="form-label">Category</label>
+						    <select class="form-select" aria-label="Default select example" required id="category" name="category">
+								<option value="OPEN">OPEN</option>
+								<option value="OBC">OBC</option>
+								<option value="SC">SC</option>
+								<option value="ST">ST</option>
+								<option value="NT">NT</option>
+							</select>
+						    
+						    <!-- disability -->
+							<div class="mb-3">
+						    	<label for="cast" class="form-label">Cast</label>
+						    	<input type="text" class="form-control"  id="cast" aria-describedby="emailHelp" placeholder="Enter here" name="cast">
+						    </div>
+						    
+						   	<!-- Contact -->
+							<div class="mb-3">
+						    	<label for="income" class="form-label">Income</label>
+						    	<input type="number" class="form-control" pattern="^[0-9]{6}$" required id="income"  placeholder="Enter here" name="income">
+						    </div>
+						    
+						    <!-- College -->
+						    <label for="college" class="form-label">College</label>
+						    <select class="form-select" aria-label="Default select example" required id="college" name="college">
+						
+								<option value="VIT">VIT</option>
+								<option value="VIIT">VIIT</option>
+								<option value="VU">VU</option>
+							</select>
+							
+							<!-- College -->
+						    <label for="branch" class="form-label">Branch</label>
+						    <select class="form-select" aria-label="Default select example" required id="branch" name="branch">
+							
+								<option value="CSE">CSE</option>
+								<option value="IT">IT</option>
+								<option value="ENTC">ENTC</option>
+								<option value="MECH">MECH</option>
+								<option value="INST">INST</option>
+								<option value="CIVIL">CIVIL</option>
+							</select>
+						    
+						    <label for="year" class="form-label">Year</label>
+						    <select class="form-select" aria-label="Default select example" required id="year" name="year">
+							 
+								<option value="1">FY</option>
+								<option value="2">SY</option>
+								<option value="3">TY</option>
+								<option value="4">BTECH</option>
+							</select>
+						    
+						    <!-- Contact -->
+							<div class="mb-3">
+						    	<label for="gradution_marks" class="form-label">Graduation Marks</label>
+						    	<input type="number" class="form-control" pattern="^[0-9]{2}$" required id="gradution_marks"  placeholder="Enter here" name="gradution_marks">
+						    </div>
+						    
+						    
+						    <!-- Contact -->
+							<div class="mb-3">
+						    	<label for="twelth_marks" class="form-label">12th Marks</label>
+						    	<input type="number" class="form-control" pattern="^[0-9]{2}$" required id="twelth_marks"  placeholder="Enter here" name="twelth_marks">
+						    </div>
+						    
+						     <!-- Contact -->
+							<div class="mb-3">
+						    	<label for="diploma_marks" class="form-label">Diploma Marks</label>
+						    	<input type="number" class="form-control" pattern="^[0-9]{2}$" required id="diploma_marks"  placeholder="Enter here" name="diploma_marks">
+						    </div>
+						    
+							<div class="mb-3">
+						    	<label for="tenth_marks" class="form-label">10th Marks</label>
+						    	<input type="number" class="form-control" pattern="^[0-9]{2}$" required id="tenth_marks"  placeholder="Enter here" name="tenth_marks">
+						    </div>
+						    
+							<div class="mb-3">
+						    	<label for="parents_name" class="form-label">Parent/Guardian Name</label>
+						    	<input type="text" class="form-control" required id="parents_name" aria-describedby="emailHelp" placeholder="Enter here" name="parents_name">
+						    </div>
+						    
+							<div class="mb-3">
+						    	<label for="parests_occupation" class="form-label">Parent/Guardian Occupation</label>
+						    	<input type="text" class="form-control" required id="parests_occupation" aria-describedby="emailHelp" placeholder="Enter here" name="parests_occupation">
+						    </div>
+		
+						    
+						    <div class="mb-3">
+						   		 <button class="form-control btn btn-primary" type="submit">Submit</button>
+						    </div>
+						    <div class="mb-3">
+						   		 <button class="form-control btn btn-gray" type="reset">Reset</button>
+						    </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

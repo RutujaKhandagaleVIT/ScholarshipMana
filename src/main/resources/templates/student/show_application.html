@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="student/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+				
+					<div class="my-card">
+						<h1 class="text-center" th:text="APPID+${p.id}"></h1>
+
+						<table class="table caption-top">
+						  <thead>
+						    <tr>
+						      <th scope="row" >Title</th>
+						      <td th:text="APPID+${p.id}">Mark</td>
+
+						    </tr>
+						  </thead>
+						  <tbody>
+						  <tr>
+						      <th scope="row" >scheme</th>
+						      <td th:text="${p.scheme}">Mark</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >firstName</th>
+						      <td th:text="${p.firstName}">Mark</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >middleName</th>
+						      <td th:text="${p.middleName}">Mark</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >lastName</th>
+						      <td th:text="${p.lastName}">Mark</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >email</th>
+						      <td th:text="${p.email}">Mark</td>
+						    </tr>
+						    
+						 	<tr>
+						      <th scope="row" >contact</th>
+						      <td th:text="${p.contact}">contact</td>
+						    </tr>
+						    
+						    <tr>
+						      <th scope="row" >gender</th>
+						      <td th:text="${p.gender}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >dob</th>
+						      <td th:text="${p.dob}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >disability</th>
+						      <td th:text="${p.disability}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >Category</th>
+						      <td th:text="${p.category}">contact</td>
+						    </tr>
+						     <tr>
+						      <th scope="row" >Caste</th>
+						      <td th:text="${p.cast}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >address</th>
+						      <td th:text="${p.address}">contact</td>
+						    </tr>
+						    
+						    <tr>
+						      <th scope="row" >income</th>
+						      <td th:text="${p.income}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >college</th>
+						      <td th:text="${p.college}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >branch</th>
+						      <td th:text="${p.branch}">contact</td>
+						    </tr>
+						   
+						   <tr>
+						      <th scope="row" >year</th>
+						      <td th:text="${p.year}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >gradution_marks</th>
+						      <td th:text="${p.gradution_marks}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >twelth_marks</th>
+						      <td th:text="${p.twelth_marks}">contact</td>
+						    </tr>
+						    
+						    <tr>
+						      <th scope="row" >diploma_marks</th>
+						      <td th:text="${p.diploma_marks}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >tenth_marks</th>
+						      <td th:text="${p.tenth_marks}">contact</td>
+						    </tr>
+						    <tr>
+						      <th scope="row" >parents_name</th>
+						      <td th:text="${p.parents_name}">contact</td>
+						    </tr>
+						   
+						    <tr>
+						      <th scope="row" >parents_name</th>
+						      <td th:text="${p.parents_name}">contact</td>
+						    </tr>
+						   
+						   <tr>
+						      <th scope="row" >Status Message</th>
+						      <td th:text="${p.message}">contact</td>
+						    </tr>
+					
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>
